@@ -1,4 +1,11 @@
+--- 
+
+---
 # Hello, I am Amy
 
 ## my post
-[postgresql](postgresql.html)
+
+{% for post in site.posts %}
+		[{{ post.title }}]({{ post.url}}) 
+{% endfor %}
+
