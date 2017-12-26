@@ -1,5 +1,7 @@
-<h1>hello, I am Amy</h1>
-
-<h2>my post</h2>
-<a href='postgresql.html'>postgresql</a>
-<a href='salt.html'>salt</a>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
