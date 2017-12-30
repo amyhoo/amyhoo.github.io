@@ -7,7 +7,26 @@ markdown: kramdown
 kramdown:
   input: GFM
 
+# About/contact
+author:
+  name: Amy
+  description: A passionate pythoner.
+  #gravatar: 3c2986ad7ac1f2230ea3596f44563328 # md5 hash of your email address
+  contact:
+    #linkedin:  https://www.linkedin.com/in/{{}}
+    github:    https://github.com/amyhoo
+    # facebook:  <hide>
+    #twitter:   https://twitter.com/Li_Zhihao
+    #weibo:     http://weibo.com/41173780
+    #email:     http://www.google.com/recaptcha/mailhide/d?k=01I3lZFiZYng9N3QxYEtsDaQ==&c=31wAnZkuKqcG0ATAqJN8Z3ln5kkYLA9TwkGc-IbygpM=
+
 defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:      
+      comment: 'disqus'
   -
     scope:
       path: ""
@@ -19,7 +38,8 @@ defaults:
       path: ""
       type: "tag"
     values:
-      layout: tag          
+      layout: tag  
+              
 # Collections
 collections:
  category:
