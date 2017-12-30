@@ -39,7 +39,23 @@ defaults:
       type: "tag"
     values:
       layout: tag  
-              
+
+# Navigation (2nd level links supported)
+nav:
+  Home:           
+    - '/'
+  Categories:           
+    - '/categories/'
+    - { devOps: '/category/devOps/' }
+    - { database: '/category/database/' }
+    - { webApp: '/category/webApp/' }
+    - { webServer: '/category/webServer/' }
+    - { payment: '/category/payment/' }
+  Tags:          
+    - '/tags/'
+  Github Project: 
+    - 'http://amyhoo.github.io/'
+                  
 # Collections
 collections:
  category:
