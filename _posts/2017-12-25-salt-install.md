@@ -1,3 +1,7 @@
+---
+categories: 	
+    - "devOps"
+---
 # pre install
 >## install pip
 >		apt-get install python-pip python3-pip

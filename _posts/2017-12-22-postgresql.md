@@ -1,3 +1,8 @@
+---
+categories: 	
+    - "database"
+---
+
 # install on ubuntu
 >     apt-get update
 >     apt-get install postgresql

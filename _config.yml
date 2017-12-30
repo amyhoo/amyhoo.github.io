@@ -6,3 +6,25 @@ theme: jekyll-theme-cayman
 markdown: kramdown
 kramdown:
   input: GFM
+  
+# Collections
+collections:
+ category:
+  output: true
+  permalink: /:collection/:title
+ tag:
+  output: true
+  permalink: /:collection/:title  
+  
+defaults:
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"  
+    scope:
+      path: ""
+      type: tag
+    values:
+      layout: "tag"        
