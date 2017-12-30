@@ -1,13 +1,13 @@
-{% if page.comment == '' %}
+{% if page.comment == none %}
   <b>comment not allowed here</b> 
 {% elsif page.comment == 'intensedebate' %}
-    <script>
-    var idcomments_acct = 'xxxx50b9b39';
-    var idcomments_post_id = '{{ page.url }}';
-    var idcomments_post_url;
-    </script>
-    <span id="IDCommentsPostTitle" style="display:none"></span>
-    <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+	<script>
+	var idcomments_acct = '3a48b3b4b18bb8a420075d88347b28de';
+	var idcomments_post_id='{{page.url}}';
+	var idcomments_post_url;
+	</script>
+	<span id="IDCommentsPostTitle" style="display:none"></span>
+	<script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 {% elsif page.comment == 'disqus' %}
 <div id="disqus_thread"></div>
 	<script>
