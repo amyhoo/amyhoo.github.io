@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: "/categories"
 ---
 # categories list
 {% for category in site.categories %}

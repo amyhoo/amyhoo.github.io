@@ -22,9 +22,9 @@ defaults:
       path: ""
       type: "category"
     values:
-      layout: "category"  
+      layout: category  
     scope:
       path: ""
       type: "tag"
     values:
-      layout: "tag"        
+      layout: tag        
