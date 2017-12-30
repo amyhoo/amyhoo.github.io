@@ -1,5 +1,5 @@
 title: Amy Hoo
-description: Amy is a female programmer focus on DevOps and  python language, living in Shanghai .
+description: Amy is a programmer focus on DevOps and  python language, living in Shanghai .
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-cayman
@@ -20,11 +20,11 @@ defaults:
   -
     scope:
       path: ""
-      type: category
+      type: "category"
     values:
       layout: "category"  
     scope:
       path: ""
-      type: tag
+      type: "tag"
     values:
       layout: "tag"        
