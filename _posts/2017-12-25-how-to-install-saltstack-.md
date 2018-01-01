@@ -1,6 +1,9 @@
 ---
 categories: 	
-    - "devOps"
+    - "colony"
+tags:
+	- "python"    
+	- "devOps"
 ---
 # pre install
 >## install pip
@@ -58,6 +61,7 @@ add master: $(master-host)
 
 
 # errors
+
 ## TLSV1_ALERT_UNKNOWN_CA
 change verify to False
 ## wrong version number
