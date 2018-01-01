@@ -1,9 +1,6 @@
 ---
-categories: 	
-    - "colony"
-tags:
-	- "python"    
-	- "devOps"
+tags: [python, devOps]
+categories: colony 	
 ---
 # grains
 

@@ -1,6 +1,5 @@
 ---
-categories: 	
-    - "database"
+categories: database    
 ---
 
 # install on ubuntu
@@ -28,8 +27,8 @@ categories:
 >     dropdb dbname
 >     createuser username
 
-#psql environment usage
->##schema
+# psql environment usage
+>## schema
 >>### show schema
 >>     \dn
 >>### create schema
@@ -41,12 +40,12 @@ categories:
 >>### add schema into search path
 >>		set search_path to 'schema_name',;
 
->##tablespace
+>## tablespace
 >>### create tablespace
 >>		create tablespace 'xxx' owner 'username' location 'path';
 
->##user
->>###list all user
+>## user
+>>### list all user
 >>		\du
 >>### create role
 >>		CREATE ROLE rolename [with password];
@@ -58,35 +57,35 @@ categories:
 >>		grant permission_type on tablename to rolename 
 >>### show permission
 >>		\z
->>###revoke permission
+>>### revoke permission
 >>		REVOKE permission_type ON table_name FROM user_name;
->>###drop user group(role)
+>>### drop user group(role)
 >>		drop role role_name;
  
->##database
->>###create databse
+>## database
+>>### create databse
 >>		CREATE DATABASE dbname;
->>###drop database
+>>### drop database
 >>		drop database dbname;
->>###shift database
+>>### shift database
 >>		\c dbname username serverIP port
->>###list all databases
+>>### list all databases
 >>		\l
->>###list all tables under database
+>>### list all tables under database
 >>		\d
->>###list connection information
+>>### list connection information
 >>		conninfo
 >>### check schma
 >>		\dn
 >>### read sql from file
 >>		\i
 
->##help, quit
+>## help, quit
 >		\h
 >		\?
 >		\q
 
->##table
+>## table
 >>### show table's columns
 >>		\d tablename
 >>### show table information
