@@ -1,6 +1,6 @@
 ---
 tags: [python, devOps]
-categories: colony 	
+categories: software 	
 ---
 # pre install
 >## install pip
