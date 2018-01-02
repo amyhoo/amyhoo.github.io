@@ -8,7 +8,7 @@ tags: [java]
 >## interface
 >UpperCamelCase
 >## constant
->capital charactor connected with _
+>UPPER_CASE_WITH_UNDERSCORES
 >## variable
 >lowerCamelCase
 >## method
@@ -37,13 +37,14 @@ tags: [java]
 ```
 >## constant | variable
 ```java
-//
+// comments
 /* user's name */
 private String userName;
 ```
 
 >## method
 ```java 
+// comments
 /**
 * description：
 * @param args1
@@ -53,9 +54,9 @@ private String userName;
 ```
 >## code block
 ```java
-// for single line
+// comments for single line
 /*
-for mutilple lines
+comments for mutilple lines
 */
 ```
 
