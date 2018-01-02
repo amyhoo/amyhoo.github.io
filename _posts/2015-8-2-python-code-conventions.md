@@ -21,7 +21,7 @@ tags: [python]
 >lowerCamelCase
 >>### variable available in module
 >* _variableName 
->* put the variable into __all__
+>* put the variable into \_\_all\_\_
 
 >>### type variable
 >Capitalized_Words_With_Underscores
@@ -36,7 +36,7 @@ tags: [python]
 >>### avoid conflict through inherit; those name will be add class name as prefix
 >__double_leading_underscore
 >>### magic name
->__double_leading_and_trailing_underscore__
+>\_\_double_leading_and_trailing_underscore\_\_
 >>### conflict with keyword
 >keyword+_
 
@@ -47,11 +47,13 @@ tags: [python]
 >## space
 >>### using space between operators ,such as = < >
 >>### don't use space in other place , such as ["a"]
+
 >## import
 >>### don't import more than two module in one line
 >>### import order: standard,third party,local 
 >>### use absolute import ;explicit relative ;Implicit relative
 >>### Wildcard imports is not recommend; from module import *
+
 # comments
 >## docstrings for module
 ```python 
@@ -95,10 +97,11 @@ return:
 >## string
 >>### string concat
 >> using ''.join() instead +
->>### string methods instead string module
+>>### using string methods instead of string module
 >>''.startswith()  ''.endswith()
 >>### check unicode string 
 >>isinstance(obj, basestring) in python2
+
 >## compare type
 >isinstance(obj, type) instead of type(obj1) is type(obj2)
 >## compare None
