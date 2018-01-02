@@ -25,6 +25,7 @@ tags: [python]
 
 >>### type variable
 >Capitalized_Words_With_Underscores
+
 >## constant
 >UPPER_CASE_WITH_UNDERSCORES
 >## exception; class name with suffix Error
@@ -54,7 +55,7 @@ tags: [python]
 # comments
 >## docstrings for module
 ```python 
-// module doc ; put in the head of module file
+# module doc ; put in the head of module file
 """This is the example module.
 This module does stuff.
 """
@@ -70,7 +71,7 @@ import sys
 ```
 >## docstrings for class
 ```python 
-// class doc ; following the definition of class
+# class doc ; following the definition of class
 """
 description:
 
@@ -78,7 +79,7 @@ description:
 ```
 >## docstrings for function or method
 ```python 
-// class doc ; following the definition of function or method
+# class doc ; following the definition of function or method
 """
 description:
 params:
@@ -87,7 +88,7 @@ return:
 ```
 >## comments for code block
 ```python 
-//  add comments before the code block
+#  add comments before the code block
 # Description : etc.
 ```
 
@@ -109,14 +110,14 @@ return:
 # exception
 >## raise exception
 ```python 
-//  recommend
+#  recommend
 raise ValueError('message') 
-// not recommend
+# not recommend
 raise ValueError, 'message'
 ```
 >## capture exception
 ```python
-// recommend
+# recommend
 try:
     process_data()
 except Exception as exc:
@@ -125,7 +126,7 @@ except Exception as exc:
 
 >## good try
 ```python
-// yes, limited line in try
+# yes, limited line in try
 try:
     value = collection[key]
 except KeyError:
@@ -133,7 +134,7 @@ except KeyError:
 else:
     return handle_value(value)
    
-// no, too much to do in try
+# no, too much to do in try
 
 try:
     # Too broad!
