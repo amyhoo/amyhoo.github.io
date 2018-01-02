@@ -20,22 +20,24 @@ tags: [java]
 
 # comments conventions
 >## file head
-```java doc
+```java
+//java doc
 /**
 * copyright etc.
 */
 ```
 >## class | interface
 ```java
+// java doc
 /**
 /*description:
 /*@author:
 /*@date:
 */
-
 ```
 >## constant | variable
 ```java
+//
 /* user's name */
 private String userName;
 ```
