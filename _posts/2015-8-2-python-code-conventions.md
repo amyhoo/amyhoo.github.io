@@ -59,13 +59,13 @@ tags: [python]
 """This is the example module.
 This module does stuff.
 """
-
+#
 from __future__ import barry_as_FLUFL
-
+#
 __all__ = ['a', 'b', 'c']
 __version__ = '0.1'
 __author__ = 'Cardinal Biggles'
-
+#
 import os
 import sys
 ```
@@ -74,7 +74,6 @@ import sys
 # class doc ; following the definition of class
 """
 description:
-
 """
 ```
 >## docstrings for function or method
@@ -88,7 +87,7 @@ return:
 ```
 >## comments for code block
 ```python 
-#  add comments before the code block
+# add comments before the code block
 # Description : etc.
 ```
 
@@ -132,15 +131,12 @@ try:
 except KeyError:
     return key_not_found(key)
 else:
-    return handle_value(value)
-   
+    return handle_value(value)   
 # no, too much to do in try
-
 try:
     # Too broad!
     return handle_value(collection[key])
 except KeyError:
     # Will also catch KeyError raised by handle_value()
     return key_not_found(key)
-
 ```
