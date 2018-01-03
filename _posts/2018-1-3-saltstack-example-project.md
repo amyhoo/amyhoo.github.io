@@ -12,7 +12,7 @@ tags: [devOps]
 ## support file distribute
 
 # the structure
-![project-structure](/assets/salt-wide-region-servers.png)
+![project-structure](/assets/img/salt-wide-region-servers.png)
 
 
 # desgin

@@ -23,7 +23,7 @@ tags: [python]
 
 >>### variable available in module
 >* _variableName 
->* put the variable into \_\_all\_\_
+>* put the variable into \__all__
 
 >>### type variable
 >Capitalized_Words_With_Underscores
@@ -38,7 +38,7 @@ tags: [python]
 >>### avoid conflict through inherit; those name will be add class name as prefix
 >__double_leading_underscore
 >>### magic name
->\_\_double_leading_and_trailing_underscore\_\_
+>\__double_leading_and_trailing_underscore__
 >>### conflict with keyword
 >keyword+_
 
