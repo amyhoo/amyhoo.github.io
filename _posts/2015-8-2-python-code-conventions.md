@@ -18,7 +18,9 @@ tags: [python]
 >* lowerCamelCase
 
 >## variable
->lowerCamelCase
+>* lower_case_with_underscores
+>* lowerCamelCase
+
 >>### variable available in module
 >* _variableName 
 >* put the variable into \_\_all\_\_

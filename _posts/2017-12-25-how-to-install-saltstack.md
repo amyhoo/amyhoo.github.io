@@ -53,7 +53,7 @@ add master: $(master-host)
 			#disable_ssl: True #http
 			ssl_crt: /etc/pki/tls/certs/localhost.crt
 			ssl_key: /etc/pki/tls/certs/localhost.key	
-## start the salt-api service
+## start the salt-api service in debug mode
 >		salt-api 2>&1 &
 
 
