@@ -13,3 +13,9 @@ tags: [devOps]
 
 # the structure
 ![project-structure](/assets/salt-wide-region-servers.png)
+
+
+# desgin
+## performance
+> * collection data run in small granularity because the data flow traveling on internet
+> * using grains to collect information, make module to split grains information into small data
