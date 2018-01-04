@@ -10,7 +10,7 @@ layout: default
 {% assign tagstring="" %}
 {% for tag in post.tags %}
 {% capture tagstring %} 
-{{ tagstring | append : [{{tag}}]({{site.baseurl}}/tag/{{tag}})}}
+{{ tagstring | append : '[{{tag}}]({{site.baseurl}}/tag/{{tag}})' }}
 {% endcapture %}
 {% endfor %}
 >>tags: {{tagstring}}
