@@ -7,6 +7,6 @@ layout: default
 {% for post in category.last %}
 >### {{forloop.index}} [{{ post.title }}]({{post.url}})	{{ post.date | date: "%b %d, %Y" }} 
 
-{% for tag in post.tags %}[{{tag}} ]({{site.baseurl}}/tag/{{tag}}){% endfor %}
+>>{% for tag in post.tags %}[{{tag}} ]({{site.baseurl}}/tag/{{tag}}){% endfor %}
 {% endfor %}
 {% endfor %}
