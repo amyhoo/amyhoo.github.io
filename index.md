@@ -7,6 +7,6 @@ layout: default
 {% for post in category.last %}
 # * [{{ post.title }}]({{post.url}})	{{ post.date | date: "%b %d, %Y" }} 
 
->tags: {{post.tags}}
+>tags: {{post.tags | join:' '}}
 {% endfor %}
 {% endfor %}
