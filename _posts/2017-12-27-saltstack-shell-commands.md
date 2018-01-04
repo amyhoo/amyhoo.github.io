@@ -32,4 +32,7 @@ salt --async '*' test.ping
 salt -v '*' test.ping
 salt-run jobs.lookup_jib 'xxx'
 ```
-## 
+# shell cmd
+```sh
+salt '*' 'cmd.run' 'whoami'
+```
