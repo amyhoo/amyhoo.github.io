@@ -5,7 +5,7 @@ layout: default
 
 {% for category in site.categories %}
 	[{{category.first}}]({{site.baseurl}}/category/{{category.first}})  {{category.last.size}}
-	{% for post in site.categories[category] %}
+	{% for post in site.categories[category.first] %}
 			{% for tag in post.tags %}
 				[{{tag}}]({{site.baseurl}}/tag/{{tag}})
 			{% endfor %}
