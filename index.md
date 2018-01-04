@@ -8,7 +8,7 @@ layout: default
 >### {{forloop.index}} [{{ post.title }}]({{post.url}})	{{ post.date | date: "%b %d, %Y" }} 
 
 {% for tag in post.tags %}
->>[{{tag}}]({{site.baseurl}}/tag/{{tag}})
+[{{tag}} ]({{site.baseurl}}/tag/{{tag}})
 {% endfor %}
 {% endfor %}
 {% endfor %}
