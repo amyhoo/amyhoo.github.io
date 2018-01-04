@@ -23,6 +23,8 @@ salt '*' grains.ls
 >		@master# salt '*' state.highstate
 >		@master# salt '*' saltutil.sync_grains
 >		@master# salt '*' saltutil.sync_all
+>		@master# salt '*' saltutil.sync_modules
+>		@master# salt '*' state.apply
 
 ## 
 
