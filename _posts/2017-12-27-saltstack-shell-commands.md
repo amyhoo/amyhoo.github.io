@@ -5,7 +5,9 @@ categories: software
 # grains
 
 ## ls items
->		@master# salt '*' grains.ls
+```sh
+salt '*' grains.ls
+```
 
 ## all items
 >		@master# salt '*' grains.items
@@ -22,4 +24,12 @@ categories: software
 >		@master# salt '*' saltutil.sync_grains
 >		@master# salt '*' saltutil.sync_all
 
+## 
+
+# job
+```sh
+salt --async '*' test.ping
+salt -v '*' test.ping
+salt-run jobs.lookup_jib 'xxx'
+```
 ## 

@@ -65,3 +65,12 @@ change verify to False
 CherryPy is not compitable with ubuntu16.04,so change rest_tornado
 ## 401 Unauthorized
 put token into header during the session
+
+# directory structure
+
+## cli
+>command line management
+## client
+>an unified client interface include command line and net etc.
+## grains
+>functions return a dict, which will be assembled into grains dict
