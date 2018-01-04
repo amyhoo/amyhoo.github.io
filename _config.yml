@@ -6,7 +6,10 @@ theme: jekyll-theme-cayman
 markdown: kramdown
 kramdown:
   input: GFM
-
+  
+plugins:
+  - jemoji
+  
 # About/contact
 author:
   name: Amy
