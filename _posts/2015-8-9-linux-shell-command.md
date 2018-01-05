@@ -14,6 +14,7 @@ which 'cmd'
 ```sh
 # list hardware
 lshw
+lshw -class network
 dmidecode –q
 # list cpu
 lscpu

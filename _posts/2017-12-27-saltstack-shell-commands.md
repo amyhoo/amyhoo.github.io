@@ -63,4 +63,21 @@ salt '*' status.netdev
 salt '*' status.netstats
 salt '*' network.get_bufsize
 salt '*' network.calc_net
+salt '*' network.hw_addr
+salt '*' network.netstat
+# show subnet
+salt '*' network.subnets
+salt '*' network.interface
+salt '*' network.routes
+salt '*' network.default_route
+salt '*' network.get_hostname 
+salt '*' network.get_route
+salt '*' dnsutil.A hostname
+```
+
+# find packages
+```sh
+salt '*' pkg.search python
+salt '*' pkg.info_installed python
+salt '*' pkg.list_pkgs
 ```
