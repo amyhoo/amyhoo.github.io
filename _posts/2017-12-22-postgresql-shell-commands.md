@@ -3,8 +3,10 @@ categories: database
 ---
 
 # install on ubuntu
->     apt-get update
->     apt-get install postgresql
+```sh
+apt-get update
+apt-get install postgresql
+```
 
 # change login mode 
 >edit file pg_hba.conf
@@ -21,72 +23,168 @@ categories: database
 >>allow remote access
 
 # cmd usage
->     psql -U username [-d database] [-h hostname]
->     psql exampledb < exampledb.sql 
->     createdb dbname
->     dropdb dbname
->     createuser username
+```sh
+psql -U username [-d database] [-h hostname]
+psql exampledb < exampledb.sql 
+createdb dbname
+dropdb dbname
+createuser username
+```
 
 # psql environment usage
 >## schema
 >>### show schema
->>     \dn
->>### create schema
->>     create schema 'xxx';
->>### drop schema
->>		drop schema 'xxx' [CASCADE];
->>### show search path
->>		show search_path;
->>### add schema into search path
->>		set search_path to 'schema_name',;
+```sh
+# into psql
+\dn
+```
 
->## tablespace
+>>### create schema
+```sh
+# into psql
+create schema 'xxx';
+```
+
+>>### drop schema
+```sh
+# into psql
+drop schema 'xxx' [CASCADE];
+```
+
+>>### show search path
+```sh
+# into psql
+show search_path
+```
+
+>>### add schema into search path
+```sh
+# into psql
+set search_path to 'schema_name'
+```	
+
+## tablespace
 >>### create tablespace
->>		create tablespace 'xxx' owner 'username' location 'path';
+```sh
+# into psql
+create tablespace 'xxx' owner 'username' location 'path';
+```
 
 >## user
 >>### list all user
->>		\du
+```sh
+# into psql
+\du
+```
+
 >>### create role
->>		CREATE ROLE rolename [with password];
+```sh
+# into psql
+CREATE ROLE rolename [with password];
+```
+
 >>### create user
->>		CREATE USER username [with password];
+```sh
+# into psql
+CREATE USER username [with password];
+```
+
 >>### alter user password
->>		ALTER USER postgres WITH PASSWORD 'postgres';
+```sh
+# into psql
+ALTER USER postgres WITH PASSWORD 'postgres'
+```		
+
 >>### permission
->>		grant permission_type on tablename to rolename 
+```sh
+# into psql
+grant permission_type on tablename to rolename 
+```	
+
 >>### show permission
->>		\z
+```sh
+# into psql
+\z
+```
+
 >>### revoke permission
->>		REVOKE permission_type ON table_name FROM user_name;
+```sh
+# into psql
+REVOKE permission_type ON table_name FROM user_name;
+```
+
 >>### drop user group(role)
->>		drop role role_name;
- 
+```sh
+# into psql
+drop role role_name;
+```	
+
 >## database
 >>### create databse
->>		CREATE DATABASE dbname;
+```sh
+# into psql
+CREATE DATABASE dbname;
+```	
+
 >>### drop database
->>		drop database dbname;
+```sh
+# into psql
+drop database dbname;
+```
+
 >>### shift database
->>		\c dbname username serverIP port
+```sh
+# into psql
+\c dbname username serverIP port
+```
+
 >>### list all databases
->>		\l
+```sh
+# into psql
+\l
+```
+
 >>### list all tables under database
->>		\d
+```sh
+# into psql
+\d
+```
+
 >>### list connection information
->>		conninfo
+```sh
+# into psql
+conninfo
+```
+
 >>### check schma
->>		\dn
+```sh
+# into psql
+\dn
+```
+
 >>### read sql from file
->>		\i
+```sh
+# into psql
+\i
+```
 
 >## help, quit
->		\h
->		\?
->		\q
+```sh
+# into psql
+\h
+\?
+\q
+```		
 
 >## table
 >>### show table's columns
->>		\d tablename
+```sh
+# into psql
+\d tablename
+```
+
 >>### show table information
->>		\d+ tablename
+```sh
+# into psql
+\d+ tablename
+```

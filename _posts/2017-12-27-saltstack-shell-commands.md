@@ -40,6 +40,7 @@ salt '*' 'cmd.run' 'whoami'
 ```
 
 # hardware check
+## disks
 ```sh
 #show all phsical disks
 salt '*' grains.get disks
@@ -52,4 +53,14 @@ salt '*' disk.blkid
 salt '*' disk.hdparms
 #get usage of volumes
 salt '*' disk.usage
+```
+## net adapter
+```sh
+# show physical net adapter
+salt '*' grains.get hwaddr_interfaces
+# show netdev 
+salt '*' status.netdev
+salt '*' status.netstats
+salt '*' network.get_bufsize
+salt '*' network.calc_net
 ```
