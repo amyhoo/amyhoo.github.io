@@ -11,7 +11,7 @@ which 'cmd'
 ```
 
 # hardware
-```bash
+```sh
 # list hardware
 lshw
 dmidecode –q
