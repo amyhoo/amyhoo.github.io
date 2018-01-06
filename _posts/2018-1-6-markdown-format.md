@@ -43,6 +43,12 @@ I think you should use an
 - [ ] this is an incomplete item
 
 # Tables
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok          | good swedish fish | nice  |
+| out of stock| good and plenty   | nice  |
+
+
 |First Header |Second Header|
 |:----------- |:------------|
 |Content from cell 1 | Content from cell 2|
