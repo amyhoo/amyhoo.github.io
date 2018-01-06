@@ -70,3 +70,6 @@ in the string
 return an iterator,which will generate all matching strings
 ## findall
 return all matched strings
+## sub
+## subn
+## split
