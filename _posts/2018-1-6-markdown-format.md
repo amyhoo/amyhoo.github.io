@@ -43,8 +43,9 @@ I think you should use an
 - [ ] this is an incomplete item
 
 # Tables
+
 | head1        | head two          | three |
-|:-------------|:------------------|:------|
+|-------------|------------------|------|
 | ok          | good swedish fish | nice  |
 | out of stock| good and plenty   | nice  |
 
