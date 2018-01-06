@@ -58,6 +58,11 @@ end
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok          | good swedish fish | nice  |
+| out of stock| good and plenty   | nice  |
+
 ### There's a horizontal rule below this.
 
 * * *
