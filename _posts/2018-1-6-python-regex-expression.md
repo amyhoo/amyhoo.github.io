@@ -30,7 +30,7 @@ tags: [python]
 ```
   
 # regex expression
-```
+```python
 # numbers
 '\d+'
 '[0-9]+'
@@ -56,11 +56,11 @@ import re
 pattern = re.compile(r'\d+')
 m=pattern.search('(98233)ad(983834)')
 if m:
-	print(m.groups()) # all groups
-	print(m.group(0)) # the whole matched string
-	print(m.group(1)) # the first group
-	print(m.group(2)) # the second group
-	print(m.group(1,2)) # the first the second group
+    print(m.groups()) # all groups
+    print(m.group(0)) # the whole matched string
+    print(m.group(1)) # the first group
+    print(m.group(2)) # the second group
+    print(m.group(1,2)) # the first the second group
 ```
 ## match
 only match from the first char
