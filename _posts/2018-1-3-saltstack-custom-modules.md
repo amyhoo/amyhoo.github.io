@@ -21,6 +21,9 @@ def network():
 # __grains__
 def show_grains():
     return __grains__     	
+# __utils__
+def utils_func(*args,**kwargs):
+    return __utils__['network.interface']('eth0')    
 ```
 ## loader salt modules
 ```python
