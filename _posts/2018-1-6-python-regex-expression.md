@@ -3,7 +3,7 @@ categories: language
 tags: [python]    
 ---
 # special char
-```
+```python
 # .
 '.+' 
 # *
