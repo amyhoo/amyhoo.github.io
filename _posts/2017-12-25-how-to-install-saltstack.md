@@ -101,3 +101,7 @@ put token into header during the session
 >an unified client interface include command line and net etc.
 ## grains
 >functions return a dict, which will be assembled into grains dict
+
+# debug mode
+## salt-minion -l debug
+## salt-master -l debug
