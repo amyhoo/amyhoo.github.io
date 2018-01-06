@@ -3,8 +3,8 @@ categories: language
 tags: [python]    
 ---
 # special char
-## .
-  .+ 
+## `.`
+  `.+ `
 ## *
   \d*
 ## +
@@ -22,8 +22,8 @@ tags: [python]
   ^\w+$
 ## |
   [a]|[b]
-## (?P<name>)
-  (?P<usre>)\w+
+## `(?P<name>)`
+  `(?P<usre>)\w+`
 ##\<number>
   (\d)abc\1 :1abc1,2abc2,3abc3,etc.
   
