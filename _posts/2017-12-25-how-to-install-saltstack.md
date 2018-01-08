@@ -103,5 +103,17 @@ put token into header during the session
 >functions return a dict, which will be assembled into grains dict
 
 # debug mode
-## salt-minion -l debug
-## salt-master -l debug
+```sh
+salt-minion -l debug
+salt-master -l debug
+salt-syndic -l debug
+```
+# check logs
+```sh
+tail -f /var/log/salt/minion
+tail -f /var/log/salt/syndic
+```
+# check version
+```sh
+salt-master --version
+```

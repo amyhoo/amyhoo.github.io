@@ -32,7 +32,8 @@ salt '*' state.apply
 ```sh
 salt --async '*' test.ping
 salt -v '*' test.ping
-salt-run jobs.lookup_jib 'xxx'
+salt-run jobs.list_jobs
+salt-run jobs.lookup_jid 'xxx'
 ```
 # shell cmd
 ```sh
@@ -80,4 +81,28 @@ salt '*' dnsutil.A hostname
 salt '*' pkg.search python
 salt '*' pkg.info_installed python
 salt '*' pkg.list_pkgs
+```
+
+# keys
+```sh
+# list 
+salt-key -l salt-minion
+# list all
+salt-key -L
+# accept
+salt-key -a salt-minion
+# accept all
+salt-key -A
+# reject
+salt-key -r salt-minion
+# reject all
+salt-key -R
+# delete 
+salt-key -d salt-minioin
+# delete all
+salt-key -D
+# print fingerprints
+salt-key -f salt-minion
+# print all fingerprints
+salt-key -F 
 ```
