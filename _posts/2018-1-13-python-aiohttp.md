@@ -8,55 +8,45 @@ tags: [python]
 import asyncio
 import aiohttp
 import async_timeout
+
 class ReqManager():
     '''
     use aiohttp ,use session which created by " async with aiohttp.ClientSession() as session"
     '''
-    def __init__(self):
-        self.session = aiohttp.ClientSession()
 
-    async def get(self,url,timeout=10,params={}):
-        with async_timeout.timeout(timeout):
-            async with self.session.get(url,params=params) as resp:
-                text=await resp.text()
-                return [resp.status,text]
+    def __init__(self, protocol='http', *args, **kwargs):
+        '''
+        args: verify:false|true,
+        kwargs: verify:false|true
+        '''
+        verify = kwargs.get('verify', False) or (args[0] if args else False)
+        if protocol == 'https':
+            self.session = aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=verify))
+        else:
+            self.session = aiohttp.ClientSession()
 
-    async def json(self,url,timeout=10,params={},json={},):
+    async def get(self, url, timeout=10, params={}):
         with async_timeout.timeout(timeout):
-            async with self.session.post(url, params=params,json={}) as resp:
-                return [resp.status,await resp.text]
+            async with self.session.get(url, params=params) as resp:
+                text = await resp.text()
+                return [resp.status, text]
+
+    async def post(self, url, verify=False, timeout=10, params={}, data={}, ):
+        with async_timeout.timeout(timeout):
+            async with self.session.post(url, params=params, data=data) as resp:
+                return [resp.status, await resp.text]
+
+    async def json(self, url, timeout=10, params={}, json={}, ):
+        with async_timeout.timeout(timeout):
+            async with self.session.post(url, params=params, json={}) as resp:
+                return [resp.status, await resp.text]
 
     def __del__(self):
-        if hasattr(self,'session'):
-            self.session.close()
-
-class ReqManagerSSL():
-
-    def __init__(self,verify=False):
-        self.session = aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=verify))
-
-    async def get(self,url,verify=False,timeout=10,params={}):
-        with async_timeout.timeout(timeout):
-            async with self.session.get(url,params=params) as resp:
-                text=await resp.text()
-                return [resp.status,text]
-
-    async def post(self,url,verify=False,timeout=10,params={},data={},):
-        with async_timeout.timeout(timeout):
-            async with self.session.post(url, params=params,data=data) as resp:
-                return [resp.status,await resp.text]
-
-    async def json(self,url,verify=False,timeout=10,params={},json={},):
-        with async_timeout.timeout(timeout):
-            async with self.session.post(url, params=params,json=json) as resp:
-                return [resp.status,await resp.text]
-
-    def __del__(self):
-        if hasattr(self,'session'):
+        if hasattr(self, 'session'):
             self.session.close()
 
 async def main1():
-    req=ReqManagerSSL()
+    req=ReqManager(protocol='https')
     resp=await req.get('https://www.baidu.com/')
     print (resp)
 
