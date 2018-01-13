@@ -85,13 +85,23 @@ rest_cherrypy:
 salt-api 2>&1 &
 ```
 # errors
-
-## TLSV1_ALERT_UNKNOWN_CA
+## salt-api
+### TLSV1_ALERT_UNKNOWN_CA
 change verify to False
-## wrong version number
+### wrong version number
 CherryPy is not compitable with ubuntu16.04,so change rest_tornado
-## 401 Unauthorized
+### 401 Unauthorized
 put token into header during the session
+
+## salt authentication
+# remove master key on minion
+```sh
+rm /etc/salt/pki/minion/minion_master.pub
+```
+# remove minion key from master
+```sh
+ rm /etc/salt/pki/minion/{minion_key}
+```
 
 # directory structure
 
@@ -116,4 +126,33 @@ tail -f /var/log/salt/syndic
 # check version
 ```sh
 salt-master --version
+salt --versions-report
+```
+
+# important categories
+## /etc/salt
+## /var/log/salt/
+## /var/cache/salt
+## /etc/salt/pki/
+
+# authentication
+```
+salt-run manage.down removekeys=True
+```
+# minion init
+```
+send a minion_pub_key to master
+master store the minion_pub_key in /etc/salt/pki/master/minions
+master send master_pub_key to minion
+minion store the master_pub_key in /etc/salt/pki/minion/minion_master.pub
+```
+
+# workflow of salt
+```
+There's a spectrum of workflows, depending on how much detail you need and when.
+
+True fire-and-forget - POST to the /hook interface.
+Fire a job, get a JID, look up the result later - POST to / or /run with one of the *_async client interfaces. Or POST to /minions.
+Fire a job and synchronously wait for the result - POST to / or /run with one of the synchronous client interfaces. You can lean on the timeout kwarg to adjust how long the connection should say open although for very long connections this like likely to run afoul of some HTTP timeout somewhere (server, client, somewhere in between, etc.)
+Watch for job new and job return events by watching the event stream at /events. This endpoint is tailor-made for long-lived connections. You can run async jobs as normal and watch the result on the event bus.
 ```

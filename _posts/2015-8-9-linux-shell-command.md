@@ -38,3 +38,39 @@ free -m
 # check network
 ifconfig -a
 ```
+
+# check file
+```sh
+# what the encode 
+enca {filename}
+# check conf definition,ignore #
+grep -v "^#" file_path
+```
+
+# process
+```sh
+# show process tree
+ps axjf
+pstree
+
+# show resource occupation
+ps aux
+ps -aux --sort -pcpu |less
+ps -aux --sort -pmem |less
+
+# show all
+ps -A
+ps -e
+
+#
+ps -a  
+ps
+```
+
+# net information
+```sh
+# show 
+netstat -apn | grep :8080
+# show listen port
+netstat -l | grep :8080
+```
