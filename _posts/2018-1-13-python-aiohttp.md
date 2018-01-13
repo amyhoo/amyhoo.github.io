@@ -19,7 +19,11 @@ class ReqManager():
         args: verify:false|true,
         kwargs: verify:false|true
         '''
-        verify = kwargs.get('verify', False) or (args[0] if args else False)
+        if 'verify' in kwargs:
+            verify = kwargs.get('verify')
+        else :
+            verify=args[0] if args else False
+            
         if protocol == 'https':
             self.session = aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=verify))
         else:
