@@ -21,7 +21,6 @@ loop = asyncio.get_event_loop()
 t = ThreadPoolExecutor(2) 
 loop.run_until_complete(main()
 ```
-
 ## delegate into process
 ```python
 # refer:https://stackoverflow.com/questions/28492103/how-to-combine-python-asyncio-with-threads
@@ -46,7 +45,16 @@ loop.run_until_complete(main()
 ```
 # aiofiles
 this won't block thread when operate files
-
+## a architecture about crawler and saving
+```python
+import aiohttp
+import asyncio
+asynic crawler()
+# get data from web
+asyn output()
+# save data into files
+ 
+```
 
 # aiohttp
 ## client

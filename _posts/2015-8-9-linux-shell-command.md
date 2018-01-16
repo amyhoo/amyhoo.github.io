@@ -37,6 +37,9 @@ dmidecode -t bios
 free -m
 # check network
 ifconfig -a
+# check os version
+uname -a
+cat /proc/version
 ```
 
 # check file
