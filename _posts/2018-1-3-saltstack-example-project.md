@@ -44,6 +44,8 @@ def minion_ip():
 ```
 
 ## custom modules
+[reference](https://stackoverflow.com/questions/18360528/how-to-get-ip-address-of-hostname-inside-jinja-template)
+
 ```python
 # set salt-level as master|syndic|minion
 def get_master_ip():
@@ -81,4 +83,17 @@ def get_minion_ip():
             if item[-2] == 'ESTABLISHED':
                 ip=item[4][:-5]
                 return ip
+```
+
+# problems
+## syn files from master to minion via syndic
+```sh
+# on salt-syndic machine
+apt-get install salt-minion
+# on salt-syndic set minion config: master: salt-master
+vi /etc/salt/minion
+# on salt-syndic set master config: file_roots refer minion cached file_roots
+vi /etc/salt/master
+# restart service ,make salt-minion to salt-syndic, salt-syndic to salt-master
+# now can transfer files
 ```

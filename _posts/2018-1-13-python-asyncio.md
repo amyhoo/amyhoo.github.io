@@ -22,8 +22,9 @@ t = ThreadPoolExecutor(2)
 loop.run_until_complete(main()
 ```
 ## delegate into process
+[reference](https://stackoverflow.com/questions/28492103/how-to-combine-python-asyncio-with-threads)
+
 ```python
-# refer:https://stackoverflow.com/questions/28492103/how-to-combine-python-asyncio-with-threads
 # computation instensive,if you transfer data in memory into another process, would use ipc mechanism
 import asyncio
 import time
