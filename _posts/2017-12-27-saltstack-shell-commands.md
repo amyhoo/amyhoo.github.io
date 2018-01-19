@@ -2,6 +2,22 @@
 tags: [python, devOps]
 categories: software 	
 ---
+# params 
+## tgt
+```sh
+# normal with wildcard
+salt '*' test.ping
+# ip
+salt -S '192.168.1.101' test.ping
+# regex
+salt -E 'web.+' test.ping
+# grains
+salt -G 'os:Ubuntu' test.ping 
+# support list
+salt -L 'minion1,minion2' test.ping
+# combine many way 
+salt -C 'web* or S@192.168.*' test.ping
+```
 # grains
 
 ## ls items

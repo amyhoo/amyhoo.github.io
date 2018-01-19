@@ -9,6 +9,16 @@ tags: [linux]
 ```sh
 which 'cmd'
 ```
+## list software  
+```sh
+#
+dpkg -l
+dpkg --list
+dpkg --get-selections
+# server
+service --status-all
+initctl list
+```
 
 # hardware
 ```sh
