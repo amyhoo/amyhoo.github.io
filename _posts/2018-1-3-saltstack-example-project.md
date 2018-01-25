@@ -87,6 +87,9 @@ def get_minion_ip():
 
 # problems
 ## syn files from master to minion via syndic
+set the framework of the node
+![salt-wide-region-servers_sync](/assets/img/salt-wide-region-servers_sync.png)
+
 ```sh
 # on salt-syndic machine
 apt-get install salt-minion
