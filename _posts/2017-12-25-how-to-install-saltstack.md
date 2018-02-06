@@ -156,3 +156,8 @@ Fire a job, get a JID, look up the result later - POST to / or /run with one of 
 Fire a job and synchronously wait for the result - POST to / or /run with one of the synchronous client interfaces. You can lean on the timeout kwarg to adjust how long the connection should say open although for very long connections this like likely to run afoul of some HTTP timeout somewhere (server, client, somewhere in between, etc.)
 Watch for job new and job return events by watching the event stream at /events. This endpoint is tailor-made for long-lived connections. You can run async jobs as normal and watch the result on the event bus.
 ```
+
+# change setting dynamically
+```sh
+salt -t 60
+```
