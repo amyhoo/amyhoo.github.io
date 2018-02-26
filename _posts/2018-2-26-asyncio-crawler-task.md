@@ -253,20 +253,20 @@ class ReqManager():
         with async_timeout.timeout(timeout):
             async with self.session.get(url, params=params) as resp:
                 text = await resp.text()
-                return {status:resp.status, text: resp.text}
-
+                return {'status': resp.status, 'text': text}
+                
     async def post(self, url, verify=False, timeout=10, params={}, data={}, ):
         with async_timeout.timeout(timeout):
             async with self.session.post(url, params=params, data=data) as resp:
                 text = await resp.text()
-                return {status:resp.status, text: resp.text}
-
+                return {'status': resp.status, 'text': text}
+                
     async def json(self, url, timeout=10, params={}, json={}, ):
         with async_timeout.timeout(timeout):
             async with self.session.post(url, params=params, json={}) as resp:
                 text = await resp.text()
-                return {status:resp.status, text: resp.text}
-
+                return {'status': resp.status, 'text': text}
+                
     def __del__(self):
         if hasattr(self, 'session'):
             self.session.close()
