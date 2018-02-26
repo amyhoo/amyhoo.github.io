@@ -2,5 +2,9 @@
 categories: language
 tags: [python]    
 ---
-# exeception conditions
-## list,dict 
+# exception should be caught
+## those caused by outside environment
+1. file not exists
+2. network fail
+3. 
+
