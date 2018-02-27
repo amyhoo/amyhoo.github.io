@@ -11,7 +11,6 @@ and I use tasks to manage web fetching because I would like to make sure  each f
 
 # task_handler
 ```python
-# -*- coding: utf-8 -*-
 '''
 this module is used to manage tasks with TaskHandler
 task is an entity or record with at least attributes :
@@ -30,6 +29,7 @@ all TaskHandler have a generator to get a sequence of task
 
 '''
 import csv
+import os
 import collections
 import uuid
 import asyncio
@@ -112,6 +112,7 @@ class TaskSaver(BaseTaskHandler):
         self._output = filename
         self._flush_max = flush_max
         self._task_buffer = []
+        self.started = False
 
     def formatter(self):
         '''
@@ -120,10 +121,19 @@ class TaskSaver(BaseTaskHandler):
         return self._task_buffer
     
     async def flush(self):
-            async with aiofiles.open(self._output, mode='a') as filer:
-                writer = csv.DictWriter(filer,self.task_class._fields)
-                await writer.writerows(self.formatter())
-            self._task_buffer=[]
+            records = self.formatter()
+            if records :
+                fields = records[0].keys()
+                if not self.started:
+                    async with aiofiles.open(self._output, mode='w',encoding='utf8') as filer:
+                        await filer.write('%s\n'%'\t'.join(fields))
+                        self.started = True
+                        await filer.write('\n'.join(['\t'.join(map(str, record.values())) for record in records]))
+                else:
+                    async with aiofiles.open(self._output, mode='a', encoding='utf8') as filer:
+                        await filer.write('\n'.join(['\t'.join(map(str, record.values())) for record in records]))
+
+                self._task_buffer=[]
 
     async def save_task(self,task,**kwargs):
         '''
@@ -134,6 +144,12 @@ class TaskSaver(BaseTaskHandler):
         self._task_buffer.append(task_info)
         if len(self._task_buffer) > self._flush_max:
             await self.flush()
+
+    def save_all(self):
+        loop = asyncio.get_event_loop()
+        f = self.flush()
+        loop.run_until_complete(f)
+
 
 class TaskProcession(BaseTaskHandler):
     '''
@@ -155,6 +171,7 @@ class TaskProcession(BaseTaskHandler):
         tasks = self.loader.tasks()
         task_list= [self.execute(task) for task in tasks]
         loop.run_until_complete(asyncio.wait(task_list))
+        self.saver.save_all()
 
     async def execute(self,task):
         '''
@@ -167,7 +184,7 @@ class TaskProcession(BaseTaskHandler):
 
 if __name__=='__main__':
     loader= TaskLoaderCsv('test.csv',['url'])
-    saver = TaskSaver(loader.task_class,'filename')
+    saver = TaskSaver(loader.task_class,'output.txt')
     from tasks.task_executor import TaskWebExecuter
     executor = TaskWebExecuter(loader.task_class)
     process = TaskProcession(loader,executor,saver)
