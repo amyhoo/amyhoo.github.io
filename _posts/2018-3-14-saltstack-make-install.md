@@ -21,23 +21,30 @@ make
 automake
 python2.7.12
 ## tools of dev
+```sh
+apt-get install libtool autoconf automake
+apt-get install uuid-dev g++
+apt-get install python-dev
+# libsodium18
+apt-get install libsodium18
+```
  
 ## basic
 ### python packages 
 ```sh
 pip install cherrypy==3.2.3
-pip install dateutil==2.4.2
+pip install python-dateutil==2.4.2
 pip install gitdb==0.6.4
-pip install gitpython: 1.0.1
+pip install gitpython==1.0.1
 pip install Jinja2==2.8
 pip install Mako==1.0.3
 pip install msgpack-python==0.4.6
 pip install pycrypto==2.6.1
 pip install PyYAML==3.11
 pip install PyZMQ==15.2.0
-pip install smmap==0.9.0
+#pip install smmap==0.9.0
 pip install Tornado==4.2.1
-pip install ZMQ==4.1.4
+
 # docker-py: Not Installed
 # ioflo: Not Installed
 # libgit2: Not Installed
@@ -54,6 +61,12 @@ pip install ZMQ==4.1.4
 ```
 ### support tools
 ```sh
+# install ZMQ=4.1.4
+wget http://download.zeromq.org/zeromq-4.1.4.tar.gz
+tar -zxvf zeromq-4.1.4.tar.gz
+./configure --prefix=/usr/local
+make
+make install
 ```
 
 ### environment
