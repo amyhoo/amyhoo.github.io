@@ -122,3 +122,9 @@ salt-key -f salt-minion
 # print all fingerprints
 salt-key -F 
 ```
+
+# file
+```
+# transfer below size of max_event_size of file: 1m
+salt-cp '*' file1,file2,file3,DEST
+```
