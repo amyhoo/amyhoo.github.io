@@ -75,7 +75,16 @@ data_list=(`db2 -x $sql`)
 
 # str format
 ```
+#output the array with delimiter
 dataStr=`printf ",'%s'" "${data_list[@]}"`
+#compare with reg
+$datastr=~[0-9]* 
+#sub string
+str='1.2.3'
+${str#*.} #2.3 remove the first . and left
+${str##*.} #3 remove the last . and left
+${str%.*} #1.2 remove the last . and right
+${str%%.*} #1 remove the first . and right 
 ```
 
 # params
