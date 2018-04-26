@@ -44,6 +44,7 @@ do
 done
 
 #read line in file
+
 for line in `cat filename`
 do 
 	echo ${line}
@@ -61,20 +62,20 @@ do
 done
 ```
 # column
-```
+```sh
 #awk 
 var=`echo $line|awk -F[,] '{print $1","$2}'`
 data_list=(`printf '%s\n' "${datas_list[@]}"|awk '{print $1}'`)
 ```
 
 # database
-```
+```sh
 sql="select * from table1"
 data_list=(`db2 -x $sql`)
 ```
 
 # str format
-```
+```sh
 #output the array with delimiter
 dataStr=`printf ",'%s'" "${data_list[@]}"`
 #compare with reg
@@ -88,7 +89,8 @@ ${str%%.*} #1 remove the first . and right
 ```
 
 # params
-``` -t param1 -s param2 -d param3 k
+```sh 
+#-t param1 -s param2 -d param3 k
 while getopts ":t:s:d:k" opt
 do
     case $opt in
