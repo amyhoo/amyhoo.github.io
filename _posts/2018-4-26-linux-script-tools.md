@@ -73,12 +73,12 @@ sql="select * from table1"
 data_list=(`db2 -x $sql`)
 ```
 
-#str format
+# str format
 ```
 dataStr=`printf ",'%s'" "${data_list[@]}"`
 ```
 
-#params
+# params
 ``` -t param1 -s param2 -d param3 k
 while getopts ":t:s:d:k" opt
 do
