@@ -61,11 +61,16 @@ do
 	echo $data
 done
 ```
-# column
+# filter ,column
 ```sh
 #awk 
 var=`echo $line|awk -F[,] '{print $1","$2}'`
 data_list=(`printf '%s\n' "${datas_list[@]}"|awk '{print $1}'`)
+#cut
+var=`echo $line|cut -d: -f2`
+#filter line
+grep "format" filename
+echo ${data_list[@]} | grep "format" 
 ```
 
 # database
