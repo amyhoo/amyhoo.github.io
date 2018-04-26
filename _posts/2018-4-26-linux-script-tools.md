@@ -77,3 +77,27 @@ data_list=(`db2 -x $sql`)
 ```
 dataStr=`printf ",'%s'" "${data_list[@]}"`
 ```
+
+#params
+``` -t param1 -s param2 -d param3 k
+while getopts ":t:s:d:k" opt
+do
+    case $opt in
+        t)
+        target=$OPTARG
+        ;;
+        s)
+        source=$OPTARG
+        ;;
+        d)
+        dest=$OPTARG
+        ;;
+        k)
+        ;;
+        ?)
+        echo "error"
+        exit 1;;
+    esac
+done
+shift $(($OPTIND-1))
+```
