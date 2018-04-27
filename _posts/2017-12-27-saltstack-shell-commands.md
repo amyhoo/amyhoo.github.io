@@ -50,6 +50,7 @@ salt --async '*' test.ping
 salt -v '*' test.ping
 salt-run jobs.list_jobs
 salt-run jobs.lookup_jid 'xxx'
+salt-run jobs.print_job 'xxx'
 salt-run jobs.last_run target=nodename function='cmd.run'
 ```
 # shell cmd
