@@ -14,6 +14,7 @@ tags: [java]
 | Angel SR6	| Œ»∂®∞Ê±æ |
 
 |Spring Cloud |	Spring Boot |
+|---|---|
 | Finchley | ºÊ»›Spring Boot 2.0.x£¨≤ªºÊ»›Spring Boot 1.5.x |
 | Dalston∫ÕEdgware |	ºÊ»›Spring Boot 1.5.x£¨≤ªºÊ»›Spring Boot 2.0.x |
 | Camden | ºÊ»›Spring Boot 1.4.x£¨“≤ºÊ»›Spring Boot 1.5.x |
