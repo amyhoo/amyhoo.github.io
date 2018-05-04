@@ -3,8 +3,8 @@ categories: os
 tags: [linux]  
 ---
 # sed command pattern
-sed "[-reinf] [acidps]"
-
+sed is good line operation
+## sed "[-reinf] [acidps]"
 # sed action [acids prw]
 ```sh
 #delete
