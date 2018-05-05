@@ -4,22 +4,22 @@ tags: [java]
 ---
 # spring cloud version
 ## all version
-|°æ±¾Ãû³Æ|	°æ±¾
+|ç‰ˆæœ¬åç§°|	ç‰ˆæœ¬
 |---|---|
-| Finchley | snapshot°æ |
-| Edgware |	snapshot°æ |
-| Dalston SR1 |	µ±Ç°×îĞÂÎÈ¶¨°æ±¾ |
-| Camden SR7 | ÎÈ¶¨°æ±¾ |
-| Brixton SR7 |	ÎÈ¶¨°æ±¾ |
-| Angel SR6	| ÎÈ¶¨°æ±¾ |
+| Finchley | snapshotç‰ˆ |
+| Edgware |	snapshotç‰ˆ |
+| Dalston SR1 |	å½“å‰æœ€æ–°ç¨³å®šç‰ˆæœ¬ |
+| Camden SR7 | ç¨³å®šç‰ˆæœ¬ |
+| Brixton SR7 |	ç¨³å®šç‰ˆæœ¬ |
+| Angel SR6	| ç¨³å®šç‰ˆæœ¬ |
 ## compatible
 |Spring Cloud |	Spring Boot |
 |---|---|
-| Finchley | ¼æÈİSpring Boot 2.0.x£¬²»¼æÈİSpring Boot 1.5.x |
-| DalstonºÍEdgware |	¼æÈİSpring Boot 1.5.x£¬²»¼æÈİSpring Boot 2.0.x |
-| Camden | ¼æÈİSpring Boot 1.4.x£¬Ò²¼æÈİSpring Boot 1.5.x |
-| Brixton | ¼æÈİSpring Boot 1.3.x£¬Ò²¼æÈİSpring Boot 1.4.x |
-| Angel | ¼æÈİSpring Boot 1.2.x |
+| Finchley | å…¼å®¹Spring Boot 2.0.xï¼Œä¸å…¼å®¹Spring Boot 1.5.x |
+| Dalstonå’ŒEdgware |	å…¼å®¹Spring Boot 1.5.xï¼Œä¸å…¼å®¹Spring Boot 2.0.x |
+| Camden | å…¼å®¹Spring Boot 1.4.xï¼Œä¹Ÿå…¼å®¹Spring Boot 1.5.x |
+| Brixton | å…¼å®¹Spring Boot 1.3.xï¼Œä¹Ÿå…¼å®¹Spring Boot 1.4.x |
+| Angel | å…¼å®¹Spring Boot 1.2.x |
 
 # spring boot plugin in eclipse
 ## install
