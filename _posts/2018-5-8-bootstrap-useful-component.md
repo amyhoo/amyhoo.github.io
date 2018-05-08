@@ -55,6 +55,28 @@ a framework of responsive html pages
 	</nav>
 </div>
 ```
+### left menu nav
+```html
+# design a nav list
+<div class="col-lg-2 col-md-3 hidden-print hidden-sm hidden-xs menu">
+	<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
+		<ul class="nav bs-docs-sidenav">
+			<li><a href="#">menu1</a>
+				<ul class="nav">
+					<li><a href="#">menu1.1</a></li>
+					<li><a href="#">menu1.2</a></li>
+					<li><a href="#">menu1.3</a></li>
+				</ul></li>
+			<li><a href="#dropdowns">menu2</a>
+				<ul class="nav">
+					<li><a href="#">menu2.1</a></li>
+					<li><a href="#">menu2.2</a></li>
+					<li><a href="#">menu2.3</a></li>
+				</ul></li>
+		</ul>
+	</nav>
+</div>
+```
 
 ## [components](https://v3.bootcss.com/components/)
 ## [script](https://v3.bootcss.com/javascript/)
