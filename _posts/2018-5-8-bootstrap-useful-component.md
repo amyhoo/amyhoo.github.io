@@ -5,6 +5,13 @@ tags: [html]
 # bootstrap
 a framework of responsive html pages 
 ## [styles](https://v3.bootcss.com/css/)
+```html
+### [rows and columns](https://v3.bootcss.com/css/#grid)
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+</div>
+```
+
+## [components](https://v3.bootcss.com/components/)
 ### [navbar](https://v3.bootcss.com/components/#navbar)
 ```html
 # desgin:fix on top, a brand icon, a jump control button, a search input
@@ -77,6 +84,4 @@ a framework of responsive html pages
 	</nav>
 </div>
 ```
-
-## [components](https://v3.bootcss.com/components/)
 ## [script](https://v3.bootcss.com/javascript/)
