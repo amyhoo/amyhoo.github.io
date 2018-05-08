@@ -37,16 +37,17 @@ a framework of responsive html pages
 					<li class="active dropdown"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown" role="button"
 						aria-haspopup="true" aria-expanded="false"> <span
-							class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+							class="glyphicon glyphicon-move" aria-hidden="true"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Separated link</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">One more separated link</a></li>
+							<li><a href="#"><span
+									class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></li>
+							<li><a href="#"><span
+									class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a></li>
+							<li><a href="#"><span
+									class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></a></li>
+							<li><a href="#"><span
+									class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></a></li>
 						</ul></li>
 				</ul>
 				<form class="navbar-form navbar-left">
