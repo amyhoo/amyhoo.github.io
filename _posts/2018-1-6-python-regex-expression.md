@@ -54,13 +54,17 @@ tags: [python]
 ```python
 import re
 pattern = re.compile(r'\d+')
-m=pattern.search('(98233)ad(983834)')
+m=pattern.search('(98233)ad(983834)',98233ad983834)
 if m:
     print(m.groups()) # all groups
     print(m.group(0)) # the whole matched string
     print(m.group(1)) # the first group
     print(m.group(2)) # the second group
     print(m.group(1,2)) # the first the second group
+    
+m=pattern.search('(?P<num>\d+)',123abc123)
+if m:
+	print(m.groupdict())
 ```
 ## match
 only match from the first char
