@@ -98,3 +98,23 @@ grep regex filename
 echo a,b,c | cut -d, -f2
 echo a,b,c | awk -F"," '{print $2}' 
 ```
+
+# performance monitor
+![monitor_tools_linux](/assets/img/monitor_tools_linux.jpg)
+
+```sh
+# cpu: User Time <= 70%，System Time <= 35%，User Time + System Time <= 70%
+# cpu: 3 or less thread  each cpu
+# memory: swap in == 0 swap out == 0  free /total <=70%	
+# disk iowait % < 20% ,packages lost
+# network not so much waiting 
+vmstat 
+free
+
+# udp lost packages
+watch netstat -su
+watch netstat -lunp
+#  tcp RetransSegs / OutSegs
+cat /proc/net/snmp | grep Tcp:
+
+```
