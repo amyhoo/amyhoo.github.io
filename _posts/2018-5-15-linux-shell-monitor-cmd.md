@@ -3,7 +3,7 @@ categories: os
 tags: [linux]    
 ---
 
-# performance monitor
+# system performance monitor
 ![monitor_tools_linux](/assets/img/monitor_tools_linux.jpg)
 
 ## examples
@@ -14,6 +14,8 @@ tags: [linux]
 vmstat 
 free
 top
+cat /proc/meminfo
+
 # network not so much waiting 
 tcpdump -i eth0
 # udp lost packages
@@ -21,11 +23,16 @@ watch netstat -su
 watch netstat -lunp
 #  tcp RetransSegs / OutSegs
 cat /proc/net/snmp | grep Tcp:
+traceroute ip 
 
 # disk iowait % < 20% ,packages lost
 iostat
 # files
 lsof -c command
+df
+#process
+strace -p pid
+pmap pid
 ```
 
 
@@ -98,3 +105,9 @@ netstat -l
 | |       total  |      used   |     free   |   shared | buff/cache  | available
 |Mem:|        8157556|      586440|     4970848|       33752|     2600268|     7176188
 |Swap:|      7811068 |          0 |    7811068 |
+
+# process monitor
+```sh
+ps -p pid -o %cpu,%mem,cmd
+ps -C chrome -o %cpu,%mem,cmd
+```
