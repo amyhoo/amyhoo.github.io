@@ -48,12 +48,11 @@ lsof -c command
 
 ## lsof
 ```sh
-lsof -c bash | awk '{print $1"|"$2"|"$3"|"$4"|"$5"|"$6"|"$7"|"$8"|"$9"|"}'
+lsof -c bash | awk '{print $1"|"$2"|"$3"|"$4"|"$5"|"$6"|"$7"|"$8"|<sub>"$9"</sub>|"}'
 ```
 
 COMMAND|PID|USER|FD|TYPE|DEVICE|SIZE/OFF|NODE|NAME|
 -|-|-|-|-|-|-|-|-|
-bash|24738|test|cwd|DIR|8,2|4096|526971|/home/test|
-bash|24738|test|rtd|DIR|8,2|4096|2|/|
-bash|24738|test|txt|REG|8,2|1037528|131074|/bin/bash|
-bash|24738|test|mem|REG|8,2|47600|4990794|/lib/x86_64-linux-gnu/libnss_files-2.23.so|
+bash|31785|root|cwd|DIR|253,1|4096|775|<sub>/root</sub>|
+bash|31785|root|rtd|DIR|253,1|4096|2|<sub>/</sub>|
+bash|31785|root|txt|REG|253,1|1037528|129541|<sub>/bin/bash</sub>|
