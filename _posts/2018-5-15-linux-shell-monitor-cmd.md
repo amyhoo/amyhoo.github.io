@@ -73,15 +73,11 @@ netstat -s
 netstat -l
 ```
 
-<sub>Active</sub>|<sub>Internet</sub>|<sub>connections</sub>|<sub>(servers</sub>|<sub>and</sub>|<sub>established)</sub>|<sub></sub>|<sub></sub>
--|-|-|-|-|-|-|-
-<sub>Proto</sub>|<sub>Recv-Q</sub>|<sub>Send-Q</sub>|<sub>Local</sub>|<sub>Address</sub>|<sub>Foreign</sub>|<sub>Address</sub>|<sub>State</sub>
-<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>localhost:9000</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
-<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>localhost:6379</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
-<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>*:18000</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
-<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>*:18001</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
-<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>*:ssh</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
-<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>*:postgresql</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
-<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>GD-SZ-CLOUD-02-ALI:4505</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
-<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>GD-SZ-CLOUD-02-ALI:4506</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
-<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>*:8001</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
+|Active|Internet|connections|(servers|and|established)||<sub></sub>|
+|-|-|-|-|-|-|-|-|
+|Proto|Recv-Q|Send-Q|Local|Address|Foreign|Address|<sub>State</sub>|
+|tcp|0|0|localhost:9000|*:*|LISTEN|-|<sub>off</sub>|
+|tcp|0|0|localhost:6379|*:*|LISTEN|-|<sub>off</sub>|
+|tcp|0|0|*:18000|*:*|LISTEN|-|<sub>off</sub>|
+|tcp|0|0|*:18001|*:*|LISTEN|-|<sub>off</sub>|
+|tcp|0|0|*:ssh|*:*|LISTEN|-|<sub>off</sub>|
