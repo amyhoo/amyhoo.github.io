@@ -99,3 +99,10 @@ echo a,b,c | cut -d, -f2
 echo a,b,c | awk -F"," '{print $2}' 
 ```
 
+# tools git
+```sh
+# store your credentials for repo
+git config credential.helper store
+git push
+```
+
