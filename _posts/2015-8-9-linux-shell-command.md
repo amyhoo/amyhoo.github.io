@@ -120,7 +120,11 @@ cat /proc/net/snmp | grep Tcp:
 
 
 # top
-| pid | user |priority|nice|virtual mem|reserved mem|shared mem| s | %cpu | %mem| total time| command |
+|pid|user|
+|-|-|
+|1|2|
+
+| pid  | user |priority|nice|virtual mem|reserved mem|shared mem| s | %cpu | %mem| total time| command |
 |:- |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
 | PID | USER | PR | NI | VIRT  | RES  | SHR  | S |  %CPU |%MEM |  TIME+   | COMMAND      | 
 |  1  | root | 20 |  0 |  38104| 6300 |  4124| S |  0.0  | 0.0 |  1:30.51 | systemd      |                                                                                                                   
