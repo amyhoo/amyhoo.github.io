@@ -73,9 +73,8 @@ netstat -s
 netstat -l
 ```
 
-|Active|Internet|connections|(servers|and|established)||<sub></sub>|
+|Proto|Recv-Q|Send-Q|Local Address||Foreign Address|State|
 |-|-|-|-|-|-|-|-|
-|Proto|Recv-Q|Send-Q|Local|Address|Foreign|Address|<sub>State</sub>|
 |tcp|0|0|localhost:9000|*:*|LISTEN|-|<sub>off</sub>|
 |tcp|0|0|localhost:6379|*:*|LISTEN|-|<sub>off</sub>|
 |tcp|0|0|*:18000|*:*|LISTEN|-|<sub>off</sub>|
