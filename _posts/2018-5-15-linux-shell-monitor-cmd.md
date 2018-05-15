@@ -10,13 +10,11 @@ tags: [linux]
 ```sh
 # cpu: User Time <= 70%，System Time <= 35%，User Time + System Time <= 70%
 # cpu: 3 or less thread  each cpu
-# memory: swap in == 0 swap out == 0  free /total <=70%	
-# disk iowait % < 20% ,packages lost
-# network not so much waiting 
+# memory: swap in == 0 swap out == 0  free /total <=70%	 
 vmstat 
 free
-
-# network
+top
+# network not so much waiting 
 tcpdump -i eth0
 # udp lost packages
 watch netstat -su
@@ -24,6 +22,8 @@ watch netstat -lunp
 #  tcp RetransSegs / OutSegs
 cat /proc/net/snmp | grep Tcp:
 
+# disk iowait % < 20% ,packages lost
+iostat
 # files
 lsof -c command
 ```
@@ -80,3 +80,15 @@ netstat -l
 |tcp|0|0|*:18000|*:*|LISTEN|-|<sub>off</sub>|
 |tcp|0|0|*:18001|*:*|LISTEN|-|<sub>off</sub>|
 |tcp|0|0|*:ssh|*:*|LISTEN|-|<sub>off</sub>|
+
+## iostat
+
+|avg-cpu:|%user|%nice|%system|%iowait|%steal|%idle|
+|-|-|-|-|-|-|-|
+||5.73|0.00|2.84|0.03|0.00|91.40|
+
+|Device:|tps|kB_read/s|kB_wrtn/s|kB_read|kB_wrtn|
+|-|-|-|-|-|-|
+|sda|3.04|6.34|35.04|38246980|211280790|
+|scd0|0.13|2.28|0.00|13755852|0|
+|dm-0|0.02|0.54|1.43|3247725|8593033|
