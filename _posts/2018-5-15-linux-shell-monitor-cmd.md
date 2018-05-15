@@ -43,6 +43,6 @@ lsof -c command
 |-|-|-|-|-|-|
 | procs | memory | swap | io | system | cpu |
 | - | - | - | - | - | - |
-|r  b | swpd free   buff  cache | si   so |   bi    bo  | in   cs | us sy id wa st |        
-| 0  0 | 832 222808  139776 583184 | 0    0 | 0     5 | 34   26 | 0  0 100  0  0 |
+|r---b | swpd---free---buff---cache | si---so |   bi---bo  | in---cs | us---sy---id---wa---st |        
+| 0---0 | 832---222808---139776---583184 | 0---0 | 0---5 | 34---26 | 0---0---100---0---0 |
                                                                                               
