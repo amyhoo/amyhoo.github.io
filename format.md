@@ -126,3 +126,5 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
+awk '{print "|"$1"|"$2"|"$3"|"$4"|"$5"|"$6"|"$7"|"$8"|"$9"|"}'
+awk '{print "<sub>"$1"</sub>|<sub>"$2"</sub>|<sub>"$3"</sub>|<sub>"$4"</sub>|<sub>"$5"</sub>|<sub>"$6"</sub>|<sub>"$7"</sub>|<sub>"$8"</sub>|<sub>"$9"}'

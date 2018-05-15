@@ -16,6 +16,8 @@ tags: [linux]
 vmstat 
 free
 
+# network
+tcpdump -i eth0
 # udp lost packages
 watch netstat -su
 watch netstat -lunp
@@ -48,11 +50,38 @@ lsof -c command
 
 ## lsof
 ```sh
-lsof -c bash | awk '{print $1"|"$2"|"$3"|"$4"|"$5"|"$6"|"$7"|"$8"|<sub>"$9"</sub>|"}'
+lsof -c bash | awk '{print "<sub>"$1"</sub>|<sub>"$2"</sub>|<sub>"$3"</sub>|<sub>"$4"</sub>|<sub>"$5"</sub>|<sub>"$6"</sub>|<sub>"$7"</sub>|<sub>"$8"</sub>|<sub>"$9"</sub>"}'
 ```
-
 COMMAND|PID|USER|FD|TYPE|DEVICE|SIZE/OFF|NODE|NAME|
 -|-|-|-|-|-|-|-|-|
 bash|31785|root|cwd|DIR|253,1|4096|775|<sub>/root</sub>|
 bash|31785|root|rtd|DIR|253,1|4096|2|<sub>/</sub>|
 bash|31785|root|txt|REG|253,1|1037528|129541|<sub>/bin/bash</sub>|
+
+## netstat 
+```sh
+# all
+netstat -a 
+netstat -ano
+netstat -at
+netstat -au
+# show process
+netstat -p
+# statics
+netstat -s
+# listen
+netstat -l
+```
+
+<sub>Active</sub>|<sub>Internet</sub>|<sub>connections</sub>|<sub>(servers</sub>|<sub>and</sub>|<sub>established)</sub>|<sub></sub>|<sub></sub>
+-|-|-|-|-|-|-|-
+<sub>Proto</sub>|<sub>Recv-Q</sub>|<sub>Send-Q</sub>|<sub>Local</sub>|<sub>Address</sub>|<sub>Foreign</sub>|<sub>Address</sub>|<sub>State</sub>
+<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>localhost:9000</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
+<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>localhost:6379</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
+<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>*:18000</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
+<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>*:18001</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
+<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>*:ssh</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
+<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>*:postgresql</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
+<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>GD-SZ-CLOUD-02-ALI:4505</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
+<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>GD-SZ-CLOUD-02-ALI:4506</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
+<sub>tcp</sub>|<sub>0</sub>|<sub>0</sub>|<sub>*:8001</sub>|<sub>*:*</sub>|<sub>LISTEN</sub>|<sub>-</sub>|<sub>off</sub>
