@@ -52,6 +52,7 @@ lsof -c bash | awk '{print $1"|"$2"|"$3"|"$4"|"$5"|"$6"|"$7"|"$8"|"$9"|"}'
 ```
 
 COMMAND|PID|USER|FD|TYPE|DEVICE|SIZE/OFF|NODE|NAME|
+-|-|-|-|-|-|-|-|-|
 bash|24738|test|cwd|DIR|8,2|4096|526971|/home/test|
 bash|24738|test|rtd|DIR|8,2|4096|2|/|
 bash|24738|test|txt|REG|8,2|1037528|131074|/bin/bash|
