@@ -73,7 +73,7 @@ netstat -s
 netstat -l
 ```
 
-|Proto|Recv-Q|Send-Q|Local Address||Foreign Address|State|
+|Proto|Recv-Q|Send-Q|Local Address|Foreign Address|State|
 |-|-|-|-|-|-|-|-|
 |tcp|0|0|localhost:9000|*:*|LISTEN|-|<sub>off</sub>|
 |tcp|0|0|localhost:6379|*:*|LISTEN|-|<sub>off</sub>|
