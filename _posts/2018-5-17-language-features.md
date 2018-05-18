@@ -52,5 +52,16 @@ function,class both can embeded each other, so closure have many forms
 ## python
 ## java
  
-
+# resource operation
+## python
+```python
+with open(filepath) as f:
+	print(f.readlines())
+```
+## java
+```java
+try( Stream< String > lines = Files.lines( path, StandardCharsets.UTF_8 ) ) {
+    lines.onClose().forEach( System.out::println );
+}
+```
 
