@@ -12,3 +12,7 @@ vi /etc/security/limits.conf
 * hard nofile 605536
 ```
 
+# hardware
+```
+cat /proc/cpuinfo
+```

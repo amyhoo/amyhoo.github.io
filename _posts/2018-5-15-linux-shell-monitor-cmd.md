@@ -30,6 +30,8 @@ iostat
 # files
 lsof -c command
 df
+du
+fdisk -l
 #process
 strace -p pid
 pmap pid
