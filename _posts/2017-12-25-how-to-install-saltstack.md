@@ -23,7 +23,12 @@ apt-get install salt-master
 >## method2 http://repo.saltstack.com/
 ```sh
 curl -L https://bootstrap.saltstack.com -o install_salt.sh
+# install master and minion
 sudo sh install_salt.sh -P -M
+# install minion
+sudo sh install_salt.sh -M
+# install syndic
+sudo sh install_salt.sh -S
 ```
 # install salt-minion
 >## method1 
@@ -52,6 +57,8 @@ salt '*' test.ping
 ```
 # install salt-api on master
 ```sh
+add-apt-repository ppa:saltstack/salt
+apt-get update
 apt-get install salt-api
 ```
 ## create ssl crt key
