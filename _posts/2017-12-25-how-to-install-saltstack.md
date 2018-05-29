@@ -168,3 +168,17 @@ Watch for job new and job return events by watching the event stream at /events.
 ```sh
 salt -t 60
 ```
+
+# cluster update
+## find information and record it
+```sh
+salt '*' test.versions_report
+salt '*' pkg.list_upgrades
+salt "*" pkg.lastest_version salt-minion
+```
+## first update salt-master 
+```
+```
+## second update salt-syndic
+
+## three update salt-minion
