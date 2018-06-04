@@ -106,3 +106,8 @@ git config credential.helper store
 git push
 ```
 
+# compare too array
+```
+printf "%s\n" ${a1[@]} ${a2[@]} | sort | uniq -u
+```
+
