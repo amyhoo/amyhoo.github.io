@@ -74,8 +74,26 @@ make install
 wget https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub 
 apt-key add  SALTSTACK-GPG-KEY.pub
 # add salt source index into sourcelist
-sed -i 'deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main' vi /etc/apt/sources.list.d/saltstack.list
+echo  'deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main' > /etc/apt/sources.list.d/saltstack.list
 apt-get update
+apt-get -d install salt-master
+apt-get -d install salt-syndic
+apt-get -d install salt-minion
+apt-get -d install salt-api
+#tar czf salt_packages.gz /var/cache/apt/archives/*.deb
+cd /var/cache/apt/archives/
+tar czf ~/salt_packages.gz *.deb
+mkdir -p /var/debs/salt
+tar -zxvf salt_packages.gz -C /var/debs
+
+# create index for apt-get 
+pack_dir=/var/debs/
+touch ${pack_dir}Packages.gz
+chmod -R 777 $pack_dir
+cd $pack_dir
+dpkg-scanpackages .  /dev/null  | gzip > Packages.gz
+echo  deb file:${pack_dir} ./ > /etc/apt/sources.list.d/saltstack.list
+apt-get update --allow-insecure-repositories
 
 #pip install --install-option="--prefix=/app/salt" --ignore-installed salt
 pip install --target=/app/salt salt

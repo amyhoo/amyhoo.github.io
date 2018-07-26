@@ -145,7 +145,7 @@ apt-get build-dep   <pkg> # download and build the environment
 # the packages of software located in /var/debs ,and generate index for apt-get  
 dpkg-scanpackages /var/debs  /dev/null  | gzip > /var/debs/Packages.gz
 # add it into  sources.list
-sed -i 'deb file:/var debs/' /etc/apt/sources.list
+sed -i 'a deb file:/var debs/' /etc/apt/sources.list
 
 # search 
 apt-cache stats             # 显示系统软件包的统计信息  
