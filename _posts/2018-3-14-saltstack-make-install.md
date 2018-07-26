@@ -71,9 +71,10 @@ make install
 
 ### environment
 ```sh
-wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
-vi /etc/apt/sources.list.d/saltstack.list
-#deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main
+wget https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub 
+apt-key add  SALTSTACK-GPG-KEY.pub
+# add salt source index into sourcelist
+sed -i 'deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main' vi /etc/apt/sources.list.d/saltstack.list
 apt-get update
 
 #pip install --install-option="--prefix=/app/salt" --ignore-installed salt
