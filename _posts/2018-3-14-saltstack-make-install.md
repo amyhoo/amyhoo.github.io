@@ -83,20 +83,27 @@ apt-get -d install salt-api
 #tar czf salt_packages.gz /var/cache/apt/archives/*.deb
 cd /var/cache/apt/archives/
 tar czf ~/salt_packages.gz *.deb
-mkdir -p /var/debs/salt
-tar -zxvf salt_packages.gz -C /var/debs
+LOCAL_RESPOSITORY=/var/debs/
+mkdir -p $LOCAL_RESPOSITORY
+tar -zxvf salt_packages.gz -C $LOCAL_RESPOSITORY
 
 # create index for apt-get 
-pack_dir=/var/debs/
-touch ${pack_dir}Packages.gz
-chmod -R 777 $pack_dir
-cd $pack_dir
+touch ${LOCAL_RESPOSITORY}Packages.gz
+chmod -R 777 $LOCAL_RESPOSITORY
+cd $LOCAL_RESPOSITORY
 dpkg-scanpackages .  /dev/null  | gzip > Packages.gz
-echo  deb file:${pack_dir} ./ > /etc/apt/sources.list.d/saltstack.list
+# create repository
+tar czf ~/salt_packages.gz *
+
+echo  deb file:$LOCAL_RESPOSITORY ./ > /etc/apt/sources.list.d/saltstack.list
 apt-get update --allow-insecure-repositories
+apt-get install salt-master -y --allow-unauthenticated
+apt-get install salt-syndic -y --allow-unauthenticated
+apt-get install salt-minion -y --allow-unauthenticated 
 
 #pip install --install-option="--prefix=/app/salt" --ignore-installed salt
 pip install --target=/app/salt salt
+
 
 ```
 ## saltstack master
