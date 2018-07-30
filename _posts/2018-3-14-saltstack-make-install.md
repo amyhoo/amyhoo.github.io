@@ -75,11 +75,13 @@ wget https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.
 apt-key add  SALTSTACK-GPG-KEY.pub
 # add salt source index into sourcelist
 echo  'deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main' > /etc/apt/sources.list.d/saltstack.list
+# add archive version 
+# echo  'deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/2017.7 xenial main' > /etc/apt/sources.list.d/saltstack.list
 apt-get update
-apt-get -d install salt-master
-apt-get -d install salt-syndic
-apt-get -d install salt-minion
-apt-get -d install salt-api
+apt-get -d install salt-master=2017.7.7+ds-1
+apt-get -d install salt-syndic=2017.7.7+ds-1
+apt-get -d install salt-minion=2017.7.7+ds-1
+apt-get -d install salt-api=2017.7.7+ds-1
 #tar czf salt_packages.gz /var/cache/apt/archives/*.deb
 cd /var/cache/apt/archives/
 tar czf ~/salt_packages.gz *.deb

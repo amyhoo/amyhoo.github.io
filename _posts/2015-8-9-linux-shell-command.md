@@ -153,4 +153,5 @@ apt-cache search <keyword>            # 使用关键字pkg搜索软件包
 apt-cache show   <pkg_name>   # 显示软件包pkg_name的详细信息  
 apt-cache depends <pkg>       # 查看pkg所依赖的软件包  
 apt-cache rdepends <pkg>      # 查看pkg被那些软件包所依赖  
+apt-cache madison <pkg>       # 查看软件版本
 ```
