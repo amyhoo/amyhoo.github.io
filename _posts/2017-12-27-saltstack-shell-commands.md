@@ -126,7 +126,7 @@ salt-key -F
 ```
 
 # file
-```
+```sh
 # transfer below size of max_event_size of file: 1m
 salt-cp '*' file1,file2,file3,DEST
 ```

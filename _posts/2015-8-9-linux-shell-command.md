@@ -107,7 +107,7 @@ git push
 ```
 
 # compare too array
-```
+```sh
 printf "%s\n" ${a1[@]} ${a2[@]} | sort | uniq -u
 printf "%s\n" ${a1[@]} ${a2[@]} | sort | uniq -c
 ```
@@ -133,21 +133,31 @@ apt-get purge <pkg>           # 删除软件包<pkg>（包括配置文件）
 
 #download
 # only download package with dependencies into dir /var/cache/apt/archives 
+```sh
 apt-get -d install XXX
 apt-get --download-only install XXX
+```
 # download to current dir ,without dependencies
+```sh
 apt-get download xxx
+```
 # download source code
+```sh
 apt-get source xxx
 apt-get source -d <pkg>  # download and compile it
 apt-get build-dep   <pkg> # download and build the environment   
+```
 
 # the packages of software located in /var/debs ,and generate index for apt-get  
+```sh
 dpkg-scanpackages /var/debs  /dev/null  | gzip > /var/debs/Packages.gz
+```
 # add it into  sources.list
+```sh
 sed -i 'a deb file:/var debs/' /etc/apt/sources.list
-
-# search 
+```
+# search
+```sh 
 apt-cache stats             # 显示系统软件包的统计信息  
 apt-cache search <keyword>            # 使用关键字pkg搜索软件包  
 apt-cache show   <pkg_name>   # 显示软件包pkg_name的详细信息  

@@ -13,6 +13,6 @@ vi /etc/security/limits.conf
 ```
 
 # hardware
-```
+```sh
 cat /proc/cpuinfo
 ```
