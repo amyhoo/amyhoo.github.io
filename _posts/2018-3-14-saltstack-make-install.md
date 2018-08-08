@@ -87,7 +87,7 @@ cd /var/cache/apt/archives/
 tar czf ~/salt_packages.gz *.deb
 LOCAL_RESPOSITORY=/var/debs/
 mkdir -p $LOCAL_RESPOSITORY
-tar -zxvf salt_packages.gz -C $LOCAL_RESPOSITORY
+tar -zxvf ~/salt_packages.gz -C $LOCAL_RESPOSITORY
 
 # create index for apt-get 
 touch ${LOCAL_RESPOSITORY}Packages.gz
