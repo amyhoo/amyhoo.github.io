@@ -12,3 +12,5 @@ tags: [java]
 # design
 1.[Decoration mode](https://dzone.com/articles/is-inheritance)
 2.[composition vs inheritance](https://www.thoughtworks.com/insights/blog/composition-vs-inheritance-how-choose)
+3.[separate data and logic ] (https://softwareengineering.stackexchange.com/questions/339032/how-acceptable-is-to-keep-business-logic-outside-entities-in-separate-service-c)
+4.[SOLID](https://en.wikipedia.org/wiki/SOLID)
