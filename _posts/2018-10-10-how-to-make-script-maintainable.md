@@ -28,8 +28,7 @@ f_msg(){
 	 	echo -e "033[34m $type $title $action \033[0m";;
 	 *) ;;
 	esac	
-	}	
-	
+	}		
 ```
 # use comment, empty line to make content readily
 >## use different pattern of comment to different part of shell script
