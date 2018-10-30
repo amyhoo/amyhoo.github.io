@@ -240,3 +240,93 @@ order by '/'||array_to_string(path,'/'),a0.depth
 (8 rows)
 
 ```
+
+
+## the schema update
+```
+with tmp_sch as (
+  select 'au75'::text as schema1,
+         'au169'::text as schema2,
+         '根据75 更改 169 的'::text as memo
+),tmp_tab as (
+   select c.table_name,
+          max(case when c.table_schema in (select schema1 from tmp_sch) then c.table_schema else null end ) as schema_au1,
+          max(case when c.table_schema in (select schema2 from tmp_sch) then c.table_schema else null end ) as schema_au2
+     from information_schema.tables c
+    where 1=1
+      and c.table_schema in (select schema1 from tmp_sch union select schema2 from tmp_sch )
+    group by c.table_name
+    order by 2 nulls first,3 nulls first,c.table_name
+),tmp_col as (
+	select 'alter table '||c.table_schema||'.'||c.table_name||' add column '||c.column_name||' '||
+	       case when c.data_type in ('character','character varying') then c.data_type||'('||c.character_maximum_length||') ' 
+	            when c.data_type in ('timestamp without time zone') then  c.data_type||' '
+	            when c.data_type in ('smallint','integer') then  c.data_type||' '
+	            when c.data_type in ('numeric') then c.data_type||'('||c.numeric_precision||','||c.numeric_scale||') ' 
+	        end||
+	        case when c.is_nullable='YES' then ' null '
+	             when c.is_nullable='NO' then ' not null '
+	         end ||
+	         case when c.column_default is null then ' '
+	              else ' DEFAULT '||c.column_default
+	         end ||
+	         ' ;' as add_column,
+	        'alter table '||c.table_schema||'.'||c.table_name||' drop column '||c.column_name||' ;' drop_column,
+	         
+	        c.table_schema,
+	        c.table_name,
+	        c.column_name,
+	        c.ordinal_position,
+	        c.data_type
+	        --c.* 
+	from information_schema.columns c
+	where 1=1
+	and c.table_schema in (select schema1 from tmp_sch union select schema2 from tmp_sch)
+	--and c.table_name='au_servers_his'
+	order by c.table_schema,c.table_name,c.ordinal_position
+)
+select (select memo from tmp_sch) as memo,tab.table_name::text,''::text as column_name,tab.schema_au1::text,tab.schema_au2::text,
+       'create table'::text as tab_result,
+       ''::text as col_result
+  from tmp_tab tab
+ where 1=1
+   and (tab.schema_au1 is null or schema_au2 is null )
+union all 
+select '##########'::text,'##########'::text,'##########'::text,'##########'::text,'##########'::text,'##########'::text,'##########'::text
+union all
+select 
+      (select memo from tmp_sch) as memo,
+      t0.table_name,
+      t0.column_name,
+      t0.schema_au1,
+      t0.schema_au2,
+      t0.tab_result,
+      case when t0.schema_au1 is null and t0.schema_au2 is not null then t0.drop_col_result2
+           when t0.schema_au1 is not null and t0.schema_au2 is null then 'alter table '||(select schema2 from tmp_sch limit 1)||'.'||substring(t0.add_col_result1 from (12+(select length(schema1) from tmp_sch limit 1)+2) for length(t0.add_col_result1)-(12+(select length(schema1) from tmp_sch limit 1)+1))
+           else 'i do no know'
+       end as col_result
+from (
+	select col.table_name::text,col.column_name::text,
+	       max(case when col.table_schema in (select schema1 from tmp_sch) then col.table_schema else null end )::text as schema_au1,
+	       max(case when col.table_schema in (select schema2 from tmp_sch) then col.table_schema else null end )::text as schema_au2,
+	       ''::text as tab_result,
+	       max(case when col.table_schema in (select schema1 from tmp_sch) then col.add_column else null end )::text as add_col_result1,
+	       max(case when col.table_schema in (select schema2 from tmp_sch) then col.add_column else null end )::text as add_col_result2,
+	       max(case when col.table_schema in (select schema1 from tmp_sch) then col.drop_column else null end )::text as drop_col_result1,
+	       max(case when col.table_schema in (select schema2 from tmp_sch) then col.drop_column else null end )::text as drop_col_result2
+	 from tmp_col col
+	where 1=1
+	  and col.table_name not in (
+	     select distinct tab.table_name
+		  from tmp_tab tab
+		 where 1=1
+		   and (tab.schema_au1 is null or schema_au2 is null )
+	  )
+	group by col.table_name,col.column_name
+	having ( max(case when col.table_schema in (select schema1 from tmp_sch) then col.table_schema else null end )::text is null 
+	      or max(case when col.table_schema in (select schema2 from tmp_sch) then col.table_schema else null end )::text is null
+	     )
+	order by col.table_name,col.column_name
+	) t0
+;
+```
