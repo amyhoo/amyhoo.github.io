@@ -96,20 +96,29 @@ salt-api 2>&1 &
 ### TLSV1_ALERT_UNKNOWN_CA
 change verify to False
 ### wrong version number
-CherryPy is not compitable with ubuntu16.04,so change rest_tornado
+CherryPy is not compitable with ubuntu16.04,so change rest_tornado or install cherrypy=3.2.3
+```
+pip install cherrypy=3.2.3
+```
 ### 401 Unauthorized
 put token into header during the session
 
 ## salt authentication
-# remove master key on minion
+### remove master key on minion
 ```sh
 rm /etc/salt/pki/minion/minion_master.pub
 ```
-# remove minion key from master
+### remove minion key from master
 ```sh
  rm /etc/salt/pki/minion/{minion_key}
 ```
-
+### multi-level network , including syndic 
+``` console
+#The master key has changed, the salt master could have been subverted, verify salt master's public key
+# to minion's dir
+rm /etc/salt/pki/minion/syndic_master.pub
+rm /etc/salt/pki/minion/*
+```
 # directory structure
 
 ## cli

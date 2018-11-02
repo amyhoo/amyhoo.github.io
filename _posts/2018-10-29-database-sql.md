@@ -246,8 +246,8 @@ order by '/'||array_to_string(path,'/'),a0.depth
 ```
 with tmp_sch as (
   select 'au75'::text as schema1,
-         'au169'::text as schema2,
-         '根据75 更改 169 的'::text as memo
+         'auUat'::text as schema2,
+         '根据Uat 更改 75 的'::text as memo
 ),tmp_tab as (
    select c.table_name,
           max(case when c.table_schema in (select schema1 from tmp_sch) then c.table_schema else null end ) as schema_au1,
@@ -258,7 +258,7 @@ with tmp_sch as (
     group by c.table_name
     order by 2 nulls first,3 nulls first,c.table_name
 ),tmp_col as (
-	select 'alter table '||c.table_schema||'.'||c.table_name||' add column '||c.column_name||' '||
+	select 'alter table "'||c.table_schema||'"."'||c.table_name||'" add column '||c.column_name||' '||
 	       case when c.data_type in ('character','character varying') then c.data_type||'('||c.character_maximum_length||') ' 
 	            when c.data_type in ('timestamp without time zone') then  c.data_type||' '
 	            when c.data_type in ('smallint','integer') then  c.data_type||' '
@@ -271,7 +271,8 @@ with tmp_sch as (
 	              else ' DEFAULT '||c.column_default
 	         end ||
 	         ' ;' as add_column,
-	        'alter table '||c.table_schema||'.'||c.table_name||' drop column '||c.column_name||' ;' drop_column,
+
+	        'alter table "'||c.table_schema||'"."'||c.table_name||'" drop column '||c.column_name||' ;' drop_column,
 	         
 	        c.table_schema,
 	        c.table_name,
@@ -286,7 +287,7 @@ with tmp_sch as (
 	order by c.table_schema,c.table_name,c.ordinal_position
 )
 select (select memo from tmp_sch) as memo,tab.table_name::text,''::text as column_name,tab.schema_au1::text,tab.schema_au2::text,
-       'create table'::text as tab_result,
+case when  tab.schema_au1 is null then 'drop table'::text else 'drop table'::text end as tab_result,
        ''::text as col_result
   from tmp_tab tab
  where 1=1
@@ -302,7 +303,7 @@ select
       t0.schema_au2,
       t0.tab_result,
       case when t0.schema_au1 is null and t0.schema_au2 is not null then t0.drop_col_result2
-           when t0.schema_au1 is not null and t0.schema_au2 is null then 'alter table '||(select schema2 from tmp_sch limit 1)||'.'||substring(t0.add_col_result1 from (12+(select length(schema1) from tmp_sch limit 1)+2) for length(t0.add_col_result1)-(12+(select length(schema1) from tmp_sch limit 1)+1))
+           when t0.schema_au1 is not null and t0.schema_au2 is null then 'alter table "'||(select schema2 from tmp_sch limit 1)||'".'||substring(t0.add_col_result1 from (14+(select length(schema1) from tmp_sch limit 1)+2) for length(t0.add_col_result1)-(14+(select length(schema1) from tmp_sch limit 1)+1))
            else 'i do no know'
        end as col_result
 from (
