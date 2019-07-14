@@ -88,17 +88,6 @@ netstat -apn | grep :8080
 netstat -l | grep :8080
 ```
 
-# str operation
-```sh
-# string conclude   
-[[ "abcabc" =~ "abc" ]] && echo yes
-# find line
-grep regex filename
-# split,get columne
-echo a,b,c | cut -d, -f2
-echo a,b,c | awk -F"," '{print $2}' 
-```
-
 # tools git
 ```sh
 # store your credentials for repo

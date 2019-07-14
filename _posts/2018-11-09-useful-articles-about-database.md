@@ -7,4 +7,4 @@ tags: [sql]
 
 # postgresql
 1. [德哥github](https://github.com/digoal)
-1. [德哥blog](https://github.com/digoal/blog)
+2. [德哥blog](https://github.com/digoal/blog)

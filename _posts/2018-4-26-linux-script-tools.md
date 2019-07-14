@@ -79,20 +79,6 @@ sql="select * from table1"
 data_list=(`db2 -x $sql`)
 ```
 
-# str format
-```sh
-#output the array with delimiter
-dataStr=`printf ",'%s'" "${data_list[@]}"`
-#compare with reg
-$datastr=~[0-9]* 
-#sub string
-str='1.2.3'
-${str#*.} #2.3 remove the first . and left
-${str##*.} #3 remove the last . and left
-${str%.*} #1.2 remove the last . and right
-${str%%.*} #1 remove the first . and right 
-```
-
 # params
 ```sh 
 #-t param1 -s param2 -d param3 k
@@ -118,3 +104,43 @@ done
 shift $(($OPTIND-1))
 ```
 
+# openssl
+```sh
+# generate private key ,actually the .pem file include private and public
+openssl genrsa -out rsa.pem 1024
+# check the information of rsa.pem
+openssl rsa -text -in rsa.pem
+# output the public key
+openssl rsa -in rsa.pem -pubout -out rsa.pub
+# export the private key
+openssl pkey -in rsa.pem -out rsa.key
+openssl -in rsa.pem -out rsa.key
+```
+
+# variables
+```sh 
+# assign a variable indirect refer it 's text name 
+function assign(){
+ var_name=$1
+ var_value=$2
+ if [[ -z "$var_value" ]]
+ then
+    read -p "please input $var_name: " $var_name
+ fi
+ echo "${!var_name}"
+}
+```
+
+# set maximum process pool for a bunch of processes
+```sh
+function checkAndWait(){
+	num_process=$1
+	prcesses=( `echo $@ | cut -d" " -f2-`)
+	while(( ${#processes[*]} >= $num_process ))
+	do 
+		wait ${processes[0]}
+		prcesses=( `echo ${processes[@]} | cut -d" " -f2-`)
+	done
+	echo ${process[@]}
+}
+```
